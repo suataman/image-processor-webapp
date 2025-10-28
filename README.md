@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  Image Processor Web App
 
-## Getting Started
+Bu proje, **Python (OpenCV)** ve **Next.js** kullanılarak geliştirilmiş web tabanlı bir resim işleme uygulamasıdır.  
+Kullanıcı, web arayüzü üzerinden bir resim yükleyerek aşağıdaki işlemleri gerçekleştirebilir:
 
-First, run the development server:
+-  Yeniden boyutlandırma  
+-  Döndürme  
+-  Yatay/Dikey çevirme  
+-  Fare ile kırpma  
+-  İşlenmiş resmi indirme  
+
+---
+
+##  Özellikler
+
+- **Next.js 13+ frontend** (modern React arayüzü)  
+-  **Python OpenCV backend** (görüntü işleme işlemleri)  
+- **Kırpma aracı** (`react-cropper` kullanılmıştır)  
+- **Görsel önizleme ve indirme desteği**  
+- **Türkçe karakter uyumlu dosya işleme**  
+
+---
+
+## Kurulum Adımları
+
+### Gerekli bağımlılıkları yükleyin
+
+#### Frontend için:
+
+```bash
+npm install
+```
+
+#### Backend (Python) için:
+
+```bash
+pip install opencv-python numpy
+```
+
+### Sunucuyu Başlatın
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Resim İşleme Akışı
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Bir resim yükleyin
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- İstediğiniz işlemleri seçin (boyut, döndürme, kırpma, çevirme)
 
-## Learn More
+- İşle butonuna tıklayın
 
-To learn more about Next.js, take a look at the following resources:
+- Python scripti (process_image.py) çalışır ve sonucu /public/uploads/ dizinine kaydeder
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- İşlenmiş resmi tarayıcıda görüntüleyebilir veya indirebilirsiniz
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kullanılan Teknolojiler
+| Teknoloji                   | Açıklama                              |
+| --------------------------- | ------------------------------------- |
+| **Next.js 13+**             | Frontend framework                    |
+| **React Cropper**           | Görüntü kırpma aracı                  |
+| **OpenCV (Python)**         | Görüntü işleme motoru                 |
+| **Node.js `child_process`** | Python scriptini tetikler             |
+| **UUID**                    | Dosya adlarının benzersizleştirilmesi |
 
-## Deploy on Vercel
+## Lisans
+**Bu proje MIT Lisansı ile lisanslanmıştır.
+Dilediğiniz gibi kullanabilir ve geliştirebilirsiniz.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notlar
+- Türkçe karakter içeren dizinlerde Python’ın dosya yolları hataya neden olabilir.
+Bu nedenle scriptler geçici olarak C:/temp_uploads dizininde çalışmaktadır.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Uygulama hem Windows hem Linux ortamında çalışabilir.
+
+- process_image.py bağımsız olarak da terminalden test edilebilir:
+```bash
+python process_image.py input.jpg output.jpg 800 600 0 none 0 0 0 0
+```
+
