@@ -1,0 +1,191 @@
+/* page.module.css */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.inputRow label {
+  flex: 1;
+  color: #333;
+}
+
+.inputRow input {
+  flex: 1;
+  max-width: 150px;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Dropdown stilleri - daha belirgin ve tutarlı */
+.inputRow select {
+  flex: 1;
+  max-width: 150px;
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  appearance: auto;
+}
+
+/* Dropdown açıldığında seçeneklerin stilleri */
+.inputRow select option {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  padding: 4px;
+}
+
+/* Dropdown hover durumu */
+.inputRow select:hover {
+  border-color: #0070f3;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0060df;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.previewContainer {
+  margin-bottom: 1.5rem;
+}
+
+.canvasContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  cursor: crosshair;
+}
+
+.canvasHelp {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.processedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.processed {
+  max-width: 100%;
+  max-height: 400px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.downloadButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.downloadButton:hover {
+  background-color: #0060df;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.rangeInput {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.rangeValue {
+  text-align: center;
+  margin-top: 0.25rem;
+  color: #333;
+}
